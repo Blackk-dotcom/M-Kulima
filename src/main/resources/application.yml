@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tradeapp
+    username: postgres
+    password: postgres123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+jwt:
+  secret: ${JWT_SECRET:6c88c43edc960dc329e80246d1251985f4b506578caff767478bc68dc32ea964}
+  expiration-ms: 86400000
+
+app:
+  upload-dir: uploads/products
+
+logging:
+  level:
+    org.springframework.security: DEBUG
